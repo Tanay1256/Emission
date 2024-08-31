@@ -1,129 +1,140 @@
 /* General Styles */
 body {
     font-family: Arial, sans-serif;
+    line-height: 1.6;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-h1, h2, h3 {
-    color: #333;
-}
-
-section {
-    padding: 50px 0;
-}
-
-/* Navbar */
 nav {
-    background-color: #2c3e50;
+    background: #333;
+    color: #fff;
     padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
 }
 
 nav .logo {
-    color: #fff;
-    font-size: 24px;
-    text-align: center;
+    float: left;
+    margin-left: 20px;
+    font-size: 1.5em;
 }
 
 nav ul {
-    display: flex;
-    justify-content: center;
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
+    list-style: none;
+    float: right;
+    margin-right: 20px;
 }
 
 nav ul li {
-    margin: 0 20px;
+    display: inline;
+    margin-left: 15px;
 }
 
 nav ul li a {
     color: #fff;
     text-decoration: none;
-    font-size: 18px;
 }
 
-nav ul li a:hover {
-    text-decoration: underline;
-}
-
-/* Header Section */
 header {
-    background-color: #3498db;
+    background: #333;
     color: #fff;
+    padding: 60px 20px;
     text-align: center;
-    padding: 100px 0;
+    margin-bottom: 20px;
 }
 
 header h1 {
-    margin-bottom: 10px;
+    margin: 0;
 }
 
 header p {
-    font-size: 18px;
+    font-size: 1.2em;
 }
 
-/* Form Styles */
-form {
+.section {
+    padding: 40px 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Calculator Section */
+#calculator {
     background-color: #fff;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-label {
+#calculatorForm label {
     display: block;
     margin-bottom: 10px;
-    color: #555;
+    font-weight: bold;
 }
 
-input[type="number"], input[type="text"] {
-    width: 100%;
+#calculatorForm input {
+    width: calc(100% - 22px);
     padding: 10px;
     margin-bottom: 20px;
-    border: 1px solid #ddd;
+    border: 1px solid #ccc;
     border-radius: 4px;
 }
 
-input[type="checkbox"], input[type="radio"] {
-    margin-right: 10px;
-}
-
-button {
-    background-color: #2c3e50;
+#calculatorForm button {
+    padding: 10px 20px;
+    background-color: #27ae60;
     color: #fff;
     border: none;
-    padding: 10px 20px;
     border-radius: 4px;
     cursor: pointer;
-    width: 100%;
-    font-size: 16px;
 }
 
-button:hover {
-    background-color: #34495e;
-}
-
-/* Emissions Summary */
-#resultSection {
-    display: none;
-    text-align: center;
-}
-
-#result {
-    font-size: 18px;
-    color: #27ae60;
-    margin-bottom: 20px;
+#calculatorForm button:hover {
+    background-color: #219150;
 }
 
 /* Emission Prediction Section */
+#emissionPrediction {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#predictionForm label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+#predictionForm input {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#predictionForm button {
+    padding: 10px 20px;
+    background-color: #27ae60;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#predictionForm button:hover {
+    background-color: #219150;
+}
+
 #emissionPredictionResult {
     font-size: 18px;
     color: #e74c3c;
@@ -134,76 +145,28 @@ button:hover {
     margin-top: 30px;
 }
 
-/* Environmental Section */
-.environmental {
-    background-color: #eaf4f4;
-    padding: 50px 0;
-    overflow: hidden;
+/* Results Section */
+#results {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#result {
+    font-size: 18px;
+    color: #333;
+}
+
+/* Environmental Impact Section */
+#environmentalSection {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .impact-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.impact-text {
-    flex: 1;
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 1s forwards;
-}
-
-.progress-bars {
-    margin-top: 20px;
-}
-
-.progress-bar {
-    background-color: #ddd;
-    border-radius: 5px;
-    margin-bottom: 20px;
-    overflow: hidden;
-}
-
-.progress {
-    height: 20px;
-    width: 0;
-    background-color: #27ae60;
-    transition: width 2s ease-in-out;
-}
-
-#progressMethane {
-    animation: fillProgress 2s forwards 0.5s;
-}
-
-#progressElectricity {
-    animation: fillProgress 2s forwards 1s;
-}
-
-.impact-illustrations svg {
-    width: 100px;
-    height: 100px;
-    animation: pulse 2s infinite ease-in-out;
-}
-
-@keyframes fadeInUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes fillProgress {
-    to {
-        width: 80%;
-    }
-}
-
-@keyframes pulse {
-    0%, 100% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.05);
-    }
+    font-size: 16px;
+    color: #333;
 }
