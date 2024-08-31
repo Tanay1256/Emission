@@ -85,3 +85,23 @@ window.addEventListener('scroll', () => {
         document.getElementById('progressElectricity').style.width = '60%';
     }
 });
+function predictEmissions() {
+    const data = {
+        production_level: parseFloat(document.getElementById('productionLevel').value),
+        equipment_usage: parseFloat(document.getElementById('equipmentUsage').value),
+        external_factors: parseFloat(document.getElementById('externalFactors').value)
+    };
+
+    fetch('http://localhost:5000/predict_emission', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    })
+    .then(response => response.json())
+    .then(data => {
+        document.getElementById('emissionPredictionResult').innerText = `Predicted Emissions: ${data.predicted_emissions} units`;
+    })
+    .catch(error => console.error('Error:', error));
+}
