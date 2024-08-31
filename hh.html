@@ -28,36 +28,30 @@
         <div class="container">
             <h2>Coal Mine Emissions Calculator</h2>
             <form id="calculatorForm">
-                <div class="section">
-                    <h3>Select Mine Type</h3>
-                    <label><input type="radio" name="mineType" value="underground" checked> Underground Mine</label>
-                    <label><input type="radio" name="mineType" value="openCast"> Open-Cast Mine</label>
-                </div>
-
-                <div class="section">
-                    <h3>Input Data</h3>
-                    <label for="coalProduction">Coal Production (tons/year):</label>
-                    <input type="number" id="coalProduction" name="coalProduction" required>
-                    
-                    <label for="electricityUsage">Electricity Usage (kWh/year):</label>
-                    <input type="number" id="electricityUsage" name="electricityUsage" required>
-                    
-                    <label for="explosivesUsed">Explosives Used (kg/year):</label>
-                    <input type="number" id="explosivesUsed" name="explosivesUsed" required>
-                    
-                    <label for="methaneEmissionFactor">Methane Emission Factor (m³ CH₄/ton):</label>
-                    <input type="number" id="methaneEmissionFactor" name="methaneEmissionFactor" required>
-                </div>
-
-                <div class="section">
-                    <h3>Emission Reduction Technologies</h3>
-                    <label><input type="checkbox" id="useEVs" name="useEVs"> Use Electric Vehicles (EVs)</label>
-                    <label><input type="checkbox" id="useMethaneCapture" name="useMethaneCapture"> Use Methane Capture Systems</label>
-                </div>
-
+                <!-- Your existing form elements -->
                 <button type="button" onclick="calculateEmissions()">Calculate Emissions</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Emission Prediction Section -->
+    <section id="emissionPrediction" class="section">
+        <div class="container">
+            <h2>Emission Prediction</h2>
+            <form id="predictionForm">
+                <label for="productionLevel">Production Level:</label>
+                <input type="number" id="productionLevel" name="productionLevel" required>
+                
+                <label for="equipmentUsage">Equipment Usage:</label>
+                <input type="number" id="equipmentUsage" name="equipmentUsage" required>
+                
+                <label for="externalFactors">External Factors:</label>
+                <input type="number" id="externalFactors" name="externalFactors" required>
+                
                 <button type="button" onclick="predictEmissions()">Predict Emissions</button>
             </form>
+            <p id="emissionPredictionResult"></p>
+            <canvas id="emissionsComparisonChart" width="400" height="200"></canvas>
         </div>
     </section>
 
@@ -67,38 +61,16 @@
             <h2>Emissions Summary</h2>
             <div id="resultSection">
                 <p id="result"></p>
-                <p id="emissionPredictionResult">Prediction result will appear here.</p>
-                <canvas id="emissionsComparisonChart" width="400" height="200"></canvas>
             </div>
         </div>
     </section>
 
-    <!-- Impact Section -->
+    <!-- Environmental Section -->
     <section id="environmentalSection" class="section environmental">
         <div class="container">
             <h2>Environmental Impact</h2>
             <div class="impact-content">
-                <div class="impact-text">
-                    <p>See how our technologies reduce emissions and contribute to a healthier planet.</p>
-                    <div class="progress-bars">
-                        <div class="progress-bar">
-                            <div class="progress" id="progressMethane"></div>
-                            <p>Methane Emissions Reduction</p>
-                        </div>
-                        <div class="progress-bar">
-                            <div class="progress" id="progressElectricity"></div>
-                            <p>Electricity Usage Reduction</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="impact-illustrations">
-                    <svg id="treeIcon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                        <!-- Tree SVG content -->
-                    </svg>
-                    <svg id="windTurbineIcon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                        <!-- Wind Turbine SVG content -->
-                    </svg>
-                </div>
+                <!-- Existing content -->
             </div>
         </div>
     </section>
