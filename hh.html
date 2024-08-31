@@ -60,51 +60,65 @@
         </div>
     </section>
 
-   <!-- Updated Results Section -->
-<!-- Updated Results Section -->
-<section id="results" class="section">
-    <div class="container">
-        <h2>Emissions Summary</h2>
-        <div id="resultSection">
-            <p id="result"></p>
-            <canvas id="emissionsComparisonChart" width="400" height="200"></canvas>
+    <!-- Updated Results Section -->
+    <section id="results" class="section">
+        <div class="container">
+            <h2>Emissions Summary</h2>
+            <div id="resultSection">
+                <p id="result"></p>
+                <canvas id="emissionsComparisonChart" width="400" height="200"></canvas>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
-
-
-    <!-- Impact Section -->
-   <!-- Environmental Section -->
-<section id="environmentalSection" class="section environmental">
-    <div class="container">
-        <h2>Environmental Impact</h2>
-        <div class="impact-content">
-            <div class="impact-text">
-                <p>See how our technologies reduce emissions and contribute to a healthier planet.</p>
-                <div class="progress-bars">
-                    <div class="progress-bar">
-                        <div class="progress" id="progressMethane"></div>
-                        <p>Methane Emissions Reduction</p>
-                    </div>
-                    <div class="progress-bar">
-                        <div class="progress" id="progressElectricity"></div>
-                        <p>Electricity Usage Reduction</p>
+    <!-- Environmental Impact Section -->
+    <section id="environmentalSection" class="section environmental">
+        <div class="container">
+            <h2>Environmental Impact</h2>
+            <div class="impact-content">
+                <div class="impact-text">
+                    <p>See how our technologies reduce emissions and contribute to a healthier planet.</p>
+                    <div class="progress-bars">
+                        <div class="progress-bar">
+                            <div class="progress" id="progressMethane"></div>
+                            <p>Methane Emissions Reduction</p>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress" id="progressElectricity"></div>
+                            <p>Electricity Usage Reduction</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="impact-illustrations">
-                <svg id="treeIcon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <!-- Tree SVG content -->
-                </svg>
-                <svg id="windTurbineIcon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <!-- Wind Turbine SVG content -->
-                </svg>
+                <div class="impact-illustrations">
+                    <svg id="treeIcon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Tree SVG content -->
+                    </svg>
+                    <svg id="windTurbineIcon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Wind Turbine SVG content -->
+                    </svg>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
+    <!-- Prediction Section -->
+    <section id="prediction" class="section">
+        <div class="container">
+            <h2>Predict Future Emissions</h2>
+            <form id="prediction-form">
+                <label for="feature1">Feature 1:</label>
+                <input type="number" id="feature1" name="feature1" required><br>
+                <label for="feature2">Feature 2:</label>
+                <input type="number" id="feature2" name="feature2" required><br>
+                <button type="submit">Predict Emission</button>
+            </form>
+
+            <!-- Section to Display Prediction Result -->
+            <div id="prediction-result">
+                <h2>Predicted Emission: <span id="predicted-value"></span></h2>
+            </div>
+        </div>
+    </section>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="jj.js"></script>
