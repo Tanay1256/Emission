@@ -25,6 +25,29 @@
 
     <!-- Calculator Section -->
     <section id="calculator" class="section">
+        <!-- Emission Prediction Section -->
+<section id="emissionPrediction" class="section">
+    <div class="container">
+        <h2>Predict Emissions</h2>
+        <form id="predictionForm">
+            <label for="productionLevel">Production Level:</label>
+            <input type="number" id="productionLevel" name="productionLevel" required>
+
+            <label for="equipmentUsage">Equipment Usage:</label>
+            <input type="number" id="equipmentUsage" name="equipmentUsage" required>
+
+            <label for="externalFactors">External Factors:</label>
+            <input type="number" id="externalFactors" name="externalFactors" required>
+
+            <button type="button" onclick="predictEmissions()">Predict Emissions</button>
+        </form>
+
+        <div id="predictionResult">
+            <p id="emissionPredictionResult"></p>
+        </div>
+    </div>
+</section>
+
         <div class="container">
             <h2>Coal Mine Emissions Calculator</h2>
             <form id="calculatorForm">
