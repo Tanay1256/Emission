@@ -24,7 +24,6 @@ def predict_emission():
 
     input_data_scaled = scaler.transform(input_data)
 
- 
     prediction = model.predict(input_data_scaled)
     result = prediction[0][0] 
 
