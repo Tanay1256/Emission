@@ -1,3 +1,4 @@
+// Function to calculate emissions based on user input
 function calculateEmissions() {
     const coalProduction = parseFloat(document.getElementById('coalProduction').value);
     const electricityUsage = parseFloat(document.getElementById('electricityUsage').value);
@@ -45,6 +46,7 @@ function calculateEmissions() {
     updateComparisonGraph(co2eFromMethaneBefore, co2eFromElectricityBefore, co2eFromExplosives, co2eFromMethane, co2eFromElectricity, co2eFromExplosives);
 }
 
+// Function to update the emissions comparison graph
 function updateComparisonGraph(methaneBefore, electricityBefore, explosives, methaneAfter, electricityAfter, explosivesAfter) {
     const ctx = document.getElementById('emissionsComparisonChart').getContext('2d');
     new Chart(ctx, {
@@ -53,14 +55,18 @@ function updateComparisonGraph(methaneBefore, electricityBefore, explosives, met
             labels: ['Methane', 'Electricity', 'Explosives'],
             datasets: [
                 {
-                    label: 'Before Reduction (tons)',
+                    label: 'Before Reduction (tons CO2e)',
                     data: [methaneBefore, electricityBefore, explosives],
-                    backgroundColor: '#e74c3c'
+                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                    borderColor: 'rgba(255, 99, 132, 1)',
+                    borderWidth: 1
                 },
                 {
-                    label: 'After Reduction (tons)',
+                    label: 'After Reduction (tons CO2e)',
                     data: [methaneAfter, electricityAfter, explosivesAfter],
-                    backgroundColor: '#27ae60'
+                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    borderWidth: 1
                 }
             ]
         },
@@ -68,20 +74,37 @@ function updateComparisonGraph(methaneBefore, electricityBefore, explosives, met
             responsive: true,
             scales: {
                 y: {
-                    beginAtZero: true
+                    beginAtZero: true,
+                    title: {
+                        display: true,
+                        text: 'Emissions (tons CO2e)'
+                    }
                 }
             }
         }
     });
 }
-window.addEventListener('scroll', () => {
-    const environmentalSection = document.getElementById('environmentalSection');
-    const sectionPosition = environmentalSection.getBoundingClientRect().top;
-    const screenPosition = window.innerHeight / 1.5;
 
-    if (sectionPosition < screenPosition) {
-        environmentalSection.querySelector('.impact-text').style.animation = 'fadeInUp 1s forwards';
-        document.getElementById('progressMethane').style.width = '80%';
-        document.getElementById('progressElectricity').style.width = '60%';
+// Function to handle form submission and send prediction request
+document.getElementById('prediction-form').addEventListener('submit', async function (e) {
+    e.preventDefault();
+
+    const feature1 = parseFloat(document.getElementById('feature1').value);
+    const feature2 = parseFloat(document.getElementById('feature2').value);
+
+    try {
+        const response = await fetch('http://127.0.0.1:8000/predict', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ feature1, feature2 }),
+        });
+
+        const data = await response.json();
+        document.getElementById('predicted-value').innerText = `${data.prediction.toFixed(2)} tons CO2e`;
+    } catch (error) {
+        console.error('Error fetching prediction:', error);
+        alert('Error fetching prediction. Please try again.');
     }
 });
