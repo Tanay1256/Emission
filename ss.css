@@ -3,197 +3,135 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    line-height: 1.6;
     background-color: #f4f4f4;
+    color: #333;
 }
 
 .container {
     max-width: 1200px;
-    margin: 0 auto;
+    margin: auto;
+    overflow: hidden;
+    padding: 0 20px;
+}
+
+.section {
     padding: 20px;
-}
-
-h1, h2, h3 {
-    color: #333;
-}
-
-section {
-    padding: 50px 0;
+    margin: 20px 0;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 /* Navbar */
 nav {
-    background-color: #2c3e50;
-    padding: 10px 0;
-}
-
-nav .logo {
-    color: #fff;
-    font-size: 24px;
-    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
 }
 
 nav ul {
+    list-style: none;
     display: flex;
-    justify-content: center;
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
 }
 
 nav ul li {
-    margin: 0 20px;
+    margin: 0 10px;
 }
 
 nav ul li a {
-    color: #fff;
+    color: white;
     text-decoration: none;
-    font-size: 18px;
 }
 
-nav ul li a:hover {
-    text-decoration: underline;
-}
-
-/* Header Section */
+/* Header */
 header {
-    background-color: #3498db;
-    color: #fff;
+    padding: 20px;
     text-align: center;
-    padding: 100px 0;
+    background: #009879;
+    color: white;
 }
 
 header h1 {
-    margin-bottom: 10px;
+    margin: 0;
+    font-size: 2.5em;
 }
 
-header p {
-    font-size: 18px;
-}
-
-/* Form Styles */
-form {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-label {
-    display: block;
-    margin-bottom: 10px;
-    color: #555;
-}
-
-input[type="number"], input[type="text"] {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-}
-
-input[type="checkbox"], input[type="radio"] {
-    margin-right: 10px;
-}
-
-button {
-    background-color: #2c3e50;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 4px;
-    cursor: pointer;
-    width: 100%;
-    font-size: 16px;
-}
-
-button:hover {
-    background-color: #34495e;
-}
-
-/* Emissions Summary */
-#resultSection {
-    display: none;
-    text-align: center;
-}
-
-#result {
-    font-size: 18px;
-    color: #27ae60;
-    margin-bottom: 20px;
-}
-
-/* Environmental Section */
+/* Environmental Impact Section */
 .environmental {
-    background-color: #eaf4f4;
-    padding: 50px 0;
-    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
 }
 
 .impact-content {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
+    width: 100%;
 }
 
 .impact-text {
-    flex: 1;
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 1s forwards;
+    max-width: 600px;
 }
 
 .progress-bars {
-    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
 }
 
 .progress-bar {
-    background-color: #ddd;
-    border-radius: 5px;
-    margin-bottom: 20px;
-    overflow: hidden;
+    margin: 10px 0;
 }
 
 .progress {
-    height: 20px;
     width: 0;
-    background-color: #27ae60;
-    transition: width 2s ease-in-out;
+    height: 20px;
+    background: green;
+    transition: width 1s;
 }
 
-#progressMethane {
-    animation: fillProgress 2s forwards 0.5s;
+/* Prediction Form */
+#prediction {
+    background: #eee;
+    padding: 20px;
+    border-radius: 8px;
 }
 
-#progressElectricity {
-    animation: fillProgress 2s forwards 1s;
+#prediction-form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
-.impact-illustrations svg {
-    width: 100px;
-    height: 100px;
-    animation: pulse 2s infinite ease-in-out;
+#prediction-form label {
+    margin-top: 10px;
 }
 
-@keyframes fadeInUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+#prediction-result {
+    margin-top: 20px;
+    font-size: 1.2em;
 }
 
-@keyframes fillProgress {
-    to {
-        width: 80%;
-    }
+/* Misc */
+h2 {
+    color: #333;
 }
 
-@keyframes pulse {
-    0%, 100% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.05);
-    }
+button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    border: none;
+    background: #009879;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
 }
 
+button:hover {
+    background: #007a63;
+}
