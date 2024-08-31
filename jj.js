@@ -105,3 +105,4 @@ function predictEmissions() {
     })
     .catch(error => console.error('Error:', error));
 }
+
