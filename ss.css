@@ -123,6 +123,17 @@ button:hover {
     margin-bottom: 20px;
 }
 
+/* Emission Prediction Section */
+#emissionPredictionResult {
+    font-size: 18px;
+    color: #e74c3c;
+    margin-bottom: 20px;
+}
+
+#emissionsComparisonChart {
+    margin-top: 30px;
+}
+
 /* Environmental Section */
 .environmental {
     background-color: #eaf4f4;
@@ -196,4 +207,3 @@ button:hover {
         transform: scale(1.05);
     }
 }
-
