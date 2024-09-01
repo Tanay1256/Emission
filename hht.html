@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coal Mine Emissions Calculator</title>
+    <link rel="stylesheet" href="sst.css">
+</head>
+<body style=" background-color:#ffb997">
+    <!-- Navbar -->
+    <nav>
+        <div class="logo">
+            <img src="logo-color.png" alt="Coal Mine Emissions Logo">
+            Clean Slate
+        </div>
+    
+            <ul>
+                <li><a href="impact.html">Home</a></li>
+                <li><a href="tt.html">Learn</a></li>
+                <li><a href="hht.html">Calculator</a></li>
+                <li><a href="#impact">Impact</a></li>
+                <li><a href="#reduction">Reduction</a></li>
+                <li><a href="resources.html">Resources</a></li>
+            </ul>
+        </ul>
+    </nav>
+
+
+    <!-- Calculator Section -->
+    <section id="calculator" class="section">
+        <div class="container">
+            <h2>Coal Mine Emissions Calculator</h2>
+            <form id="calculatorForm">
+                <div class="section">
+                    <h3>Select Mine Type</h3>
+                    <label><input type="radio" name="mineType" value="underground" checked> Underground Mine</label>
+                    <label><input type="radio" name="mineType" value="openCast"> Open-Cast Mine</label>
+                </div>
+
+                <div class="section">
+                    <h3>Input Data</h3>
+                    <label for="coalProduction">Coal Production (tons/year):</label>
+                    <input type="number" id="coalProduction" name="coalProduction" required>
+                    
+                    <label for="electricityUsage">Electricity Usage (kWh/year):</label>
+                    <input type="number" id="electricityUsage" name="electricityUsage" required>
+                    
+                    <label for="explosivesUsed">Explosives Used (kg/year):</label>
+                    <input type="number" id="explosivesUsed" name="explosivesUsed" required>
+                    
+                    <label for="methaneEmissionFactor">Methane Emission Factor (m³ CH₄/ton):</label>
+                    <input type="number" id="methaneEmissionFactor" name="methaneEmissionFactor" required>
+                </div>
+
+                <div class="section">
+                    <h3>Emission Reduction Technologies</h3>
+                    <label><input type="checkbox" id="useEVs" name="useEVs"> Use Electric Vehicles (EVs)</label>
+                    <label><input type="checkbox" id="useMethaneCapture" name="useMethaneCapture"> Use Methane Capture Systems</label>
+                </div>
+
+                <button type="button" onclick="calculateEmissions()">Calculate Emissions</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section id="results" class="section" style="background-color: #fff;">
+        <div class="container">
+            <h2>Emissions Summary</h2>
+            <div id="resultSection">
+                <p id="result"></p>
+                <canvas id="emissionsComparisonChart" width="400" height="200"></canvas>
+            </div>
+        </div>
+    </section>
+
+    <!-- Environmental Impact Section -->
+    <section id="impact" class="section environmental">
+        <div class="container">
+            <h2>Environmental Impact</h2>
+            <div class="impact-content">
+                <div class="impact-text">
+                    <p>See how our technologies reduce emissions and contribute to a healthier planet.</p>
+                    <div class="progress-bars">
+                        <div class="progress-bar">
+                            <div class="progress" id="progressMethane"></div>
+                            <p>Methane Emissions Reduction</p>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress" id="progressElectricity"></div>
+                            <p>Electricity Usage Reduction</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="impact-illustrations">
+                    <img src="wind-mill-6875_128.gif" alt="Wind Mill" class="icon">
+                    <img src="wind-mill-6875_128.gif" alt="Wind Turbine Icon" class="icon">
+                    <img src="wind-mill-6875_128.gif" alt="Wind Turbine Icon" class="icon">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Carbon Credits Section -->
+<!-- Carbon Credits Section -->
+<section id="carbonCredits" class="section">
+    <div class="container" background-color:#ffb997>
+        <h2 style="text-shadow: 3px 3px 2px #FFD700">Carbon Credits</h2>
+        <p id="carbonCreditsText">Earn carbon credits by selecting emission reduction technologies.</p>
+        <p id="carbonCreditsAmount">Total Carbon Credits: <span id="carbonCreditsValue">0</span> credits</p>
+        <div id="coinAnimation">
+            <img src="coin.png" width= 20px height= 20px alt="Carbon Credit Coin" class="coin">
+        </div>
+    </div>
+</section>
+
+
+
+    <section id="aiRecommendations" class="section">
+        <div class="container">
+           <a href="tt.html"><button id="xx"><h4>Get Emission Reduction Suggestions</h4></button></a>
+            <p>We will analyze your inputs and suggest the best strategies to reduce emissions.</p>
+        </div>
+    </section>
+   
+   
+    <footer>
+        <p>&copy; 2023 Coal Mine Emissions Calculator</p>
+        <ul>
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+        </ul>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="jjt.js"></script>
+</body>
+</html>
